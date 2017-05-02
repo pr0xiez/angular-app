@@ -5,7 +5,7 @@ import { User, UserService } from './shared'
 @Component({
   selector: 'app-root',
   template: `
-  <pre>{{ heroes | json }}</pre>
+  <pre>{{ users | json }}</pre>
   <form>
     <label>
       Username:
@@ -22,6 +22,13 @@ import { User, UserService } from './shared'
   providers: []
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  users: User[] = []
+
+  constructor(private userService: UserService) {}
   
+  ngOnInit() {
+    this.userService.getUsers()
+      .then(users => this.users = users)
+  }
 }
