@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { LoginComponent } from './login/login.component';
+import { UserService } from './login/shared/user.service'
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ UserService ],
   bootstrap: [LoginComponent]
 })
 export class AppModule { }

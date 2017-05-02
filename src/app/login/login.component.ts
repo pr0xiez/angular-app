@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
-import { User, UserService } from './shared'
+import { User } from './shared/user.model'
+import { UserService } from './shared/user.service'
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,11 @@ import { User, UserService } from './shared'
     <label>
       Username:
       <input type="text" name="name" />
-    </label>
+    </label><br><br>
     <label>
       Password:
       <input type="text" name="name" />
-    </label>
+    </label><br><br>
     <input type="submit" value="Submit" />
   </form>
   `,
